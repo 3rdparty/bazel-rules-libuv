@@ -21,7 +21,6 @@ cmake(
             "Release/uv.lib",
             "Release/uv_a.lib",
         ],
-        "@bazel_tools//src/conditions:darwin": ["libuv_a.a"],
         "//conditions:default": ["libuv_a.a"],
     }),
     visibility = ["//visibility:public"],
