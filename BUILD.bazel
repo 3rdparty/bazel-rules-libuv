@@ -1,0 +1,27 @@
+load("@rules_foreign_cc//foreign_cc:defs.bzl", "cmake")
+
+filegroup(
+    name = "all",
+    srcs = glob(["**"]),
+    visibility = ["//visibility:public"],
+)
+
+cmake(
+    name = "libuv",
+    cache_entries = {
+        "CMAKE_BUILD_TYPE": "Release",
+        "BUILD_SHARED_LIBS": "OFF",
+        "LIBUV_BUILD_TESTS": "OFF",
+        "LIBUV_BUILD_BENCH": "OFF",
+    },
+    lib_source = "@libuv//:all",
+    #here is simple comparison that the files in this path and their names are same
+    out_static_libs = select({
+        "@bazel_tools//src/conditions:windows": [
+            "Release/uv.lib",
+            "Release/uv_a.lib",
+        ],
+        "//conditions:default": ["libuv_a.a"],
+    }),
+    visibility = ["//visibility:public"],
+)
