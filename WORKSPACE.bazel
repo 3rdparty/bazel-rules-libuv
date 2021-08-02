@@ -1,0 +1,7 @@
+load("//:repos.bzl", leveldb_repos = "repos")
+
+leveldb_repos()
+
+load("@com_github_3rdparty_bazel_rules_leveldb//bazel:deps.bzl", leveldb_deps = "deps")
+
+leveldb_deps()
