@@ -36,4 +36,8 @@ def deps():
 
 4. You can then use `@com_github_libuv_libuv//:libuv` in your target's `deps`.
 
-5. Repeat the steps starting at (1) at the desired version of this repository that you want to use.
+5. Repeat the steps starting at (1) at the desired version of this repository that you want to use:
+
+| libuv | Copy `bazel/repos.bzl` from: |
+| :---: | :--------------------------: |
+| 1.42.0 | [16758d8](https://github.com/3rdparty/bazel-rules-libuv/tree/16758d840b7abf529943e78bc7afa2a7e5381dc0) |
