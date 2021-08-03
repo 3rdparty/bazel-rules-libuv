@@ -9,7 +9,6 @@
 # instructions at https://github.com/3rdparty/bazel-rules-libuv.
 ########################################################################
 
-load("@bazel_tools//tools/build_defs/repo:git.bzl", "git_repository")
 load("@bazel_tools//tools/build_defs/repo:http.bzl", "http_archive")
 
 def repos(external = True, repo_mapping = {}):
@@ -23,10 +22,10 @@ def repos(external = True, repo_mapping = {}):
         )
 
     if external and "com_github_3rdparty_bazel_rules_libuv" not in native.existing_rules():
-        git_repository(
+        http_archive(
             name = "com_github_3rdparty_bazel_rules_libuv",
-            remote = "https://github.com/3rdparty/bazel-rules-libuv",
-            commit = "",
-            shallow_since = "1620093785 -0700",
+            url = "https://github.com/3rdparty/bazel-rules-libuv/archive/1.42.0.tar.gz",
+            sha256 = "e469c3e5ffe962dcbbbf4a3fe7499cfaa05f0e65236f4d33dce70340ac9c5df5",
+            strip_prefix = "bazel-rules-libuv-1.42.0",
             repo_mapping = repo_mapping,
         )
