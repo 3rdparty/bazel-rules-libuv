@@ -24,8 +24,8 @@ def repos(external = True, repo_mapping = {}):
     if external and "com_github_3rdparty_bazel_rules_libuv" not in native.existing_rules():
         http_archive(
             name = "com_github_3rdparty_bazel_rules_libuv",
-            url = "https://github.com/3rdparty/bazel-rules-libuv/archive/1.42.0.tar.gz",
-            sha256 = "e469c3e5ffe962dcbbbf4a3fe7499cfaa05f0e65236f4d33dce70340ac9c5df5",
-            strip_prefix = "bazel-rules-libuv-1.42.0",
+            url = "https://github.com/3rdparty/bazel-rules-libuv/archive/libuv-1.42.0.tar.gz",
+            sha256 = "6367f35a64c997d4c6ec869acc7c768e2cffd7bd3ae87a8c7d9eec2a9eec4d77",
+            strip_prefix = "bazel-rules-libuv-libuv-1.42.0",
             repo_mapping = repo_mapping,
         )
