@@ -8,19 +8,19 @@ filegroup(
 
 cmake(
     name = "libuv",
-    visibility = ["//visibility:public"],
     cache_entries = {
         "CMAKE_BUILD_TYPE": "Release",
         "BUILD_SHARED_LIBS": "OFF",
+        "BUILD_STATIC_LIBS": "ON",
         "LIBUV_BUILD_TESTS": "OFF",
         "LIBUV_BUILD_BENCH": "OFF",
     },
     lib_source = ":all",
     out_static_libs = select({
         "@bazel_tools//src/conditions:windows": [
-            "Release/uv.lib",
             "Release/uv_a.lib",
         ],
         "//conditions:default": ["libuv_a.a"],
     }),
+    visibility = ["//visibility:public"],
 )
