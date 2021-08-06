@@ -18,9 +18,17 @@ cmake(
     lib_source = ":all",
     out_static_libs = select({
         "@bazel_tools//src/conditions:windows": [
-            "Release/uv.lib",
             "Release/uv_a.lib",
         ],
         "//conditions:default": ["libuv_a.a"],
+    }),
+	linkopts = select({
+            "@bazel_tools//src/conditions:windows": [
+                "WS2_32.Lib Advapi32.lib Iphlpapi.lib Userenv.lib User32.lib",
+            ],
+            "@bazel_tools//src/conditions:darwin": [],
+            "//conditions:default": [
+                "-ldl",
+            ],
     }),
 )
