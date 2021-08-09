@@ -40,4 +40,4 @@ def deps():
 
 | libuv | Copy `bazel/repos.bzl` from: |
 | :---: | :--------------------------: |
-| 1.42.0 | [16758d8](https://github.com/3rdparty/bazel-rules-libuv/tree/16758d840b7abf529943e78bc7afa2a7e5381dc0) |
+| 1.42.0 | [c672b03](https://github.com/3rdparty/bazel-rules-libuv/tree/c672b030143144dbda4cb5d2a83667972a24b79c) |
