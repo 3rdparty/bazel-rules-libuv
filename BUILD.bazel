@@ -14,6 +14,7 @@ cmake(
         "BUILD_SHARED_LIBS": "OFF",
         "LIBUV_BUILD_TESTS": "OFF",
         "LIBUV_BUILD_BENCH": "OFF",
+        "CMAKE_SKIP_RPATH": "YES",
     },
     lib_source = ":all",
     out_static_libs = select({
