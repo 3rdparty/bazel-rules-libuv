@@ -19,19 +19,19 @@ libuv_deps()
 Or ... to simplify others depending on ***your*** repository, add the following to your `repos.bzl`:
 
 ```bazel
-load("//3rdparty/bazel-rules-libuv:repos.bzl", libuv="repos")
+load("//3rdparty/bazel-rules-libuv:repos.bzl", libuv_repos="repos")
 
 def repos():
-    libuv()
+    libuv_repos()
 ```
 
 And the following to your `deps.bzl`:
 
 ```bazel
-load("@com_github_3rdparty_bazel_rules_libuv//bazel:deps.bzl", libuv="deps")
+load("@com_github_3rdparty_bazel_rules_libuv//bazel:deps.bzl", libuv_deps="deps")
 
 def deps():
-    libuv()
+    libuv_deps()
 ```
 
 4. You can then use `@com_github_libuv_libuv//:libuv` in your target's `deps`.
@@ -40,4 +40,4 @@ def deps():
 
 | libuv | Copy `bazel/repos.bzl` from: |
 | :---: | :--------------------------: |
-| 1.42.0 | [c672b03](https://github.com/3rdparty/bazel-rules-libuv/tree/c672b030143144dbda4cb5d2a83667972a24b79c) |
+| 1.42.0 | [71c98de](https://github.com/3rdparty/bazel-rules-libuv/tree/71c98def1562432a7776e5cbfff5c1a55374de2b) |
